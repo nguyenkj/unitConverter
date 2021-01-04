@@ -11,5 +11,13 @@ namespace unitConverter.Views
         {
             InitializeComponent();
         }
+
+        //public void CounterButton_Clicked(object sender, System.EventArgs e)
+        //{
+        //    ((ViewModels.AboutViewModel) this.BindingContext).globalcount++;
+        //    ((Button)sender).Text = $"You clicked {((ViewModels.AboutViewModel) this.BindingContext).globalcount} times.";
+        //}
+
+        //public int globalCount { get; set; } = 0;
     }
 }
