@@ -18,7 +18,6 @@ namespace unitConverter.ViewModels
             Title = "Convert";
 
             ConvertCommand = new Command(execute => ConvertUnits(InputAmount));
-            //
         }
 
         //public void convert()
@@ -40,9 +39,34 @@ namespace unitConverter.ViewModels
         //    DoSomething(_breedEnum);
         //}
 
-        public void ConvertUnits(double input)
+        public async void ConvertUnits(double input)
         {
-            OutputAmount = UnitConverters.KilogramsToPounds(input);
+            if (FromUnit == "Kilograms" && ToUnit == "Pounds")
+                OutputAmount = UnitConverters.KilogramsToPounds(input);
+            else if (FromUnit == "Pounds" && ToUnit == "Kilograms")
+                OutputAmount = UnitConverters.PoundsToKilograms(input);
+            else if (FromUnit == "Kilograms" && ToUnit == "Ounces")
+                OutputAmount = input * 35.274;
+            else if (FromUnit == "Ounces" && ToUnit == "Kilograms")
+                OutputAmount = input * 0.0283495;
+            else if (FromUnit == "Pounds" && ToUnit == "Ounces")
+                OutputAmount = input * 16;
+            else if (FromUnit == "Ounces" && ToUnit == "Pounds")
+                OutputAmount = input * 0.0625;
+            else if (FromUnit == "Kilograms" && ToUnit == "Grams")
+                OutputAmount = input * 1000;
+            else if (FromUnit == "Grams" && ToUnit == "Kilograms")
+                OutputAmount = input * 0.001;
+            else if (FromUnit == "Pounds" && ToUnit == "Grams")
+                OutputAmount = input * 453.592;
+            else if (FromUnit == "Grams" && ToUnit == "Pounds")
+                OutputAmount = input * 0.00220462;
+            else if (FromUnit == "Ounces" && ToUnit == "Grams")
+                OutputAmount = input * 28.3495;
+            else if (FromUnit == "Grams" && ToUnit == "Ounces")
+                OutputAmount = input * 0.035274;
+            else if (FromUnit == ToUnit)
+                OutputAmount = input;
         }
 
         public ICommand ConvertCommand { get; }

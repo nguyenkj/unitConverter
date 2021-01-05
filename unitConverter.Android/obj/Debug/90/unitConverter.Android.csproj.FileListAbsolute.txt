@@ -493,3 +493,4 @@ D:\Repos\unitConverter\unitConverter.Android\obj\Debug\90\stamp\_ConvertResource
 D:\Repos\unitConverter\unitConverter.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 D:\Repos\unitConverter\unitConverter.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 D:\Repos\unitConverter\unitConverter.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\Repos\unitConverter\unitConverter.Android\obj\Debug\90\res\drawable\ruler.png
