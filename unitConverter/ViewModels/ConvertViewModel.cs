@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using Xamarin.Essentials;
 
 namespace unitConverter.ViewModels
 {
@@ -16,7 +17,8 @@ namespace unitConverter.ViewModels
         {
             Title = "Convert";
 
-            //ConvertCommand = new Command(execute: () => {  } ConvertGramsToKilograms(float.Parse(InputAmount))) ;
+            ConvertCommand = new Command(execute => ConvertUnits(InputAmount));
+            //
         }
 
         //public void convert()
@@ -38,15 +40,10 @@ namespace unitConverter.ViewModels
         //    DoSomething(_breedEnum);
         //}
 
-        //public void ConvertGramsToKilograms (float weight)
-        //{
-        //    ConvertAmount = weight / 1000;
-        //}
-
-        //public void ConvertPoundsToKilograms(float weight)
-        //{
-        //    ConvertAmount = weight / 1000;
-        //}
+        public void ConvertUnits(double input)
+        {
+            OutputAmount = UnitConverters.KilogramsToPounds(input);
+        }
 
         public ICommand ConvertCommand { get; }
 
@@ -58,17 +55,40 @@ namespace unitConverter.ViewModels
             set { SetProperty(ref convertUnit, value, "SelectedUnit"); }
         }
 
-        private float convertamount = 0;
-        public float ConvertAmount
+        private double convertamount = 0;
+        public double ConvertAmount
         {
             get { return convertamount; }
             set { SetProperty(ref convertamount, value, "ConvertAmount"); }
         }
 
-        public string InputAmount { get; set; }
-        public string OutputAmount { get; set; }
-        public string FromUnit { get; set; }
-        public string ToUnit { get; set; }
+        public double inputamount;
+        public double outputamount;
+
+        public double InputAmount
+        {
+            get { return inputamount; }
+            set { SetProperty(ref inputamount, value, "InputAmount"); }
+        }
+        public double OutputAmount
+        {
+            get { return outputamount; }
+            set { SetProperty(ref outputamount, value, "OutputAmount"); }
+        }
+
+        public string fromunit;
+        public string FromUnit
+        {
+            get { return fromunit; }
+            set { SetProperty(ref fromunit, value, "FromUnit"); }
+        }
+
+        public string tounit;
+        public string ToUnit
+        {
+            get { return tounit; }
+            set { SetProperty(ref tounit, value, "ToUnit"); }
+        }
 
         public class ConvertableUnit
         {

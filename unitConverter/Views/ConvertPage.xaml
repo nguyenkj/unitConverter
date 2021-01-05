@@ -11,18 +11,38 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding InputAmount}" Placeholder="Unit to Convert" />
-            <Picker Title="Select a Unit to Convert"
-                    ItemsSource="{Binding ConvertableUnits}"
-                    ItemDisplayBinding="{Binding Name}"
-                    SelectedItem="{Binding SelectedUnit}" />
-            <Entry Text="{Binding ConvertAmount}" />
-            <Picker Title="What should we convert to?"
-                    ItemsSource="{Binding ConvertableUnits}"
-                    ItemDisplayBinding="{Binding Name}"
-                    SelectedItem="{Binding SelectedUnit}" />
-            <Button Margin="0,10,0,0" Text="Convert" 
+            <Entry Text="{Binding InputAmount}" Placeholder="Unit to Convert" 
+                   Keyboard="Numeric"/>
+            <Picker x:Name="FromUnit"
+                    Title="Select a Unit to Convert"
+                    SelectedItem="{Binding FromUnit}">
+                <Picker.Items>
+                    <x:String>Kilograms</x:String>
+                    <x:String>Grams</x:String>
+                    <x:String>Pounds</x:String>
+                    <x:String>Ounces</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry Text="{Binding OutputAmount}" 
+                   Keyboard="Numeric"/>
+            <Picker x:Name="ToUnit"
+                    Title="What should we convert to?"
+                    SelectedItem="{Binding ToUnit}">
+                <Picker.Items>
+                    <x:String>Kilograms</x:String>
+                    <x:String>Grams</x:String>
+                    <x:String>Pounds</x:String>
+                    <x:String>Ounces</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Margin="0,10,0,0" Text="CONVERT" 
                     Command="{Binding ConvertCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+            <Label Margin="0,10,0,0" Text="{Binding FromUnit}" 
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+            <Label Margin="0,10,0,0" Text="{Binding ToUnit}" 
                     BackgroundColor="{StaticResource Primary}"
                     TextColor="White" />
         </StackLayout>
