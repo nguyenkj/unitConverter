@@ -65,6 +65,10 @@ namespace unitConverter.ViewModels
                 OutputAmount = input * 28.3495;
             else if (FromUnit == "Grams" && ToUnit == "Ounces")
                 OutputAmount = input * 0.035274;
+            else if (FromUnit == "Kilograms" && ToUnit == "1995 Honda Civic Hatch")
+                OutputAmount = input / 1143;
+            else if (FromUnit == "1995 Honda Civic Hatchback" && ToUnit == "Kilograms")
+                OutputAmount = input * 1143;
             else if (FromUnit == ToUnit)
                 OutputAmount = input;
             //Add below alerts for error cases. 

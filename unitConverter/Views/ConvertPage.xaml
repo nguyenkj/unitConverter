@@ -24,10 +24,13 @@
                     HorizontalTextAlignment="Center"
                     WidthRequest="200" >
                     <Picker.Items>
-                        <x:String>Kilograms</x:String>
-                        <x:String>Grams</x:String>
-                        <x:String>Pounds</x:String>
-                        <x:String>Ounces</x:String>
+                        <x:String>Kilogram</x:String>
+                        <x:String>Gram</x:String>
+                        <x:String>Pound</x:String>
+                        <x:String>Ounce</x:String>
+                        <x:String>1995 Honda Civic Hatch</x:String>
+                        <x:String>2017 Tesla Model 3</x:String>
+                        <x:String>1999 Mitsubishi Lancer Evo VI</x:String>
                     </Picker.Items>
                 </Picker>
                 <Entry Text="{Binding OutputAmount, StringFormat='{0:F2}'}" 
@@ -42,10 +45,14 @@
                         HorizontalTextAlignment="Center"
                         WidthRequest="200" >
                     <Picker.Items>
-                        <x:String>Kilograms</x:String>
-                        <x:String>Grams</x:String>
-                        <x:String>Pounds</x:String>
-                        <x:String>Ounces</x:String>
+                        <x:String>Kilogram</x:String>
+                        <x:String>Gram</x:String>
+                        <x:String>Pound</x:String>
+                        <x:String>Ounce</x:String>
+                        <x:String>1995 Honda Civic Hatch</x:String>
+                        <x:String>1999 Mitsubishi Lancer Evo VI</x:String>
+                        <x:String>2017 Tesla Model 3</x:String>
+                        <x:String>1999 Mitsubishi Lancer Evo VI</x:String>
                     </Picker.Items>
                 </Picker>
                 <Button Margin="0,50,0,0" Text="CONVERT" 
