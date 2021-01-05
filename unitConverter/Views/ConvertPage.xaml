@@ -39,12 +39,6 @@
                     Command="{Binding ConvertCommand}"
                     BackgroundColor="{StaticResource Primary}"
                     TextColor="White" />
-            <Label Margin="0,10,0,0" Text="{Binding FromUnit}" 
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White" />
-            <Label Margin="0,10,0,0" Text="{Binding ToUnit}" 
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
