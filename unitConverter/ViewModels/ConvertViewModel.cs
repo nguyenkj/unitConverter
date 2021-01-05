@@ -67,6 +67,7 @@ namespace unitConverter.ViewModels
                 OutputAmount = input * 0.035274;
             else if (FromUnit == ToUnit)
                 OutputAmount = input;
+            //alerts for error cases
             else if (FromUnit == "" || ToUnit == "")
                 await Application.Current.MainPage.DisplayAlert("Error", "Please select units to convert.", "OK");
             else
