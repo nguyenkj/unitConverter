@@ -47,7 +47,7 @@ namespace unitConverter.Views
             var ThisViewModel = (ConvertViewModel)BindingContext;
 
             if (ThisViewModel.CheckAllFieldsCompleted() == true)
-                ThisViewModel.ConvertLengthCommand.Execute(null);
+                ThisViewModel.ConvertWeightCommand.Execute(null);
         }
     }
 }
