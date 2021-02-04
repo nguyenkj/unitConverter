@@ -26,10 +26,28 @@ namespace unitConverter.Views
         {
             base.OnAppearing();
 
-            List<UselessThing> UselessThings = await App.Database.GetUselessThingsAsync();
+            List<UselessThing> DatabaseList = await App.Database.GetUselessThingsAsync();
+
+            List<UselessThing> UselessThings = DatabaseList.OrderBy(x => x.Type).ThenBy(x => x.Name).ToList();
 
             FromUnitP.ItemsSource = UselessThings;
             ToUnitP.ItemsSource = UselessThings;
+        }
+
+        private void UnitPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ThisViewModel = (ConvertViewModel)BindingContext;
+
+            if (ThisViewModel.CheckAllFieldsCompleted() == true)
+                ThisViewModel.ConvertWeightCommand.Execute(null);
+        }
+
+        private void InputAmount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var ThisViewModel = (ConvertViewModel)BindingContext;
+
+            if (ThisViewModel.CheckAllFieldsCompleted() == true)
+                ThisViewModel.ConvertLengthCommand.Execute(null);
         }
     }
 }

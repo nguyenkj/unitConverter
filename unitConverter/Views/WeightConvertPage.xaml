@@ -21,7 +21,8 @@
     <ContentPage.Content>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10" BackgroundColor="{StaticResource AppBackground}">
-                <Entry Text="{Binding InputAmount}" Placeholder="Unit to Convert" 
+                <Entry Text="{Binding InputAmount}" Placeholder="Unit to Convert"
+                   TextChanged="InputAmount_TextChanged"
                    Keyboard="Numeric"
                    WidthRequest="500"  
                    HorizontalOptions="Center"
@@ -32,6 +33,7 @@
                     TitleColor="{StaticResource PreviewText}"
                     ItemDisplayBinding="{Binding Name}"
                     SelectedItem="{Binding FromUnit}"
+                    SelectedIndexChanged="UnitPicker_SelectedIndexChanged"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     WidthRequest="500" 
@@ -48,15 +50,12 @@
                         TitleColor="{StaticResource PreviewText}"
                         ItemDisplayBinding="{Binding Name}"
                         SelectedItem="{Binding ToUnit}"
+                        SelectedIndexChanged="UnitPicker_SelectedIndexChanged"
                         HorizontalOptions="Center"
                         HorizontalTextAlignment="Center"
                         WidthRequest="500"
                         TextColor="{StaticResource BodyText}">
                 </Picker>
-                <Button Margin="0,50,0,0" Text="CONVERT" 
-                        Command="{Binding ConvertWeightCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="{StaticResource BodyText}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

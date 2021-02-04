@@ -88,6 +88,14 @@ namespace unitConverter.ViewModels
             }
         }
 
+        public bool CheckAllFieldsCompleted()
+        {
+            if (FromUnit == null || ToUnit == null || InputAmount == null)
+                return false;
+
+            return true;
+        }
+
         public ICommand ConvertWeightCommand { get; }
 
         public ICommand ConvertLengthCommand { get; }
