@@ -11,7 +11,9 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent">#96D1FF</Color>
+            <Color x:Key="BodyText">#FFFFFF</Color>
+            <Color x:Key="AppBackground">#36393F</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -20,41 +22,19 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <StackLayout BackgroundColor="{StaticResource AppBackground}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                    <Image Source="decknology_banner.png" VerticalOptions="Center" HeightRequest="64" />
                 </ContentView>
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="PENIS!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-
-                <Button Margin="0,10,0,0" Text="PENIS!"
-                        Command="{Binding OpenWebCommand2}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-
-                <Button Margin="0,10,0,0" Text="{Binding GlobalCount}" 
-                        Command="{Binding CounterCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
+            <StackLayout BackgroundColor="{StaticResource AppBackground}" Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Welcome to Decknology's Useless Unit Converter!" FontSize="Title" HorizontalTextAlignment="Center" TextColor="{StaticResource BodyText}"/>
+                <Label Text="Have you ever wondered how tall Elon Musk is in hot dogs? Maybe you want to know how many bananas a 1995 Honda Civic weighs." FontSize="Body" HorizontalTextAlignment="Start" TextColor="{StaticResource BodyText}"/>
+                <Label Text="No, someone as adventurous as you probably wants to know how many Donald Trumps it takes to outweigh the moon. With this app, you can figure out the answers to your wildest questions, and more!" FontSize="Body" HorizontalTextAlignment="Start" TextColor="{StaticResource BodyText}"/>
+                <Label Text="Click on the menu button to get started." FontSize="Body" HorizontalTextAlignment="Center" TextColor="{StaticResource BodyText}"/>
             </StackLayout>
         </ScrollView>
     </Grid>

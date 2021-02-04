@@ -17,4 +17,5 @@ D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\unitConverter.dll
 D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\ref\unitConverter.dll
 D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\unitConverter.pdb
-D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\Views\ConvertPage.xaml.g.cs
+D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\Views\LengthConvertPage.xaml.g.cs
+D:\Repos\unitConverter\unitConverter\obj\Debug\netstandard2.0\Views\WeightConvertPage.xaml.g.cs

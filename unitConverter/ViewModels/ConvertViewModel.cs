@@ -8,16 +8,23 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using Xamarin.Essentials;
+using unitConverter.Models;
+using SQLite;
 
 namespace unitConverter.ViewModels
 {
     public class ConvertViewModel : BaseViewModel, INotifyPropertyChanged
     {
+        readonly UselessThingDatabase dbHelper = App.Database;
+
         public ConvertViewModel()
         {
-            Title = "Convert";
+            WeightPageTitle = "WEIGHT CONVERSIONS";
+            LengthPageTitle = "LENGTH CONVERSIONS";
 
-            ConvertCommand = new Command(execute => ConvertUnits(InputAmount));
+            ConvertWeightCommand = new Command(execute => ConvertWeight(InputAmount));
+
+            ConvertLengthCommand = new Command(execute => ConvertLength(InputAmount));
         }
 
         //public void convert()
@@ -39,46 +46,51 @@ namespace unitConverter.ViewModels
         //    DoSomething(_breedEnum);
         //}
 
-        public async void ConvertUnits(double input)
+        public async void ConvertWeight(float input)
         {
-            if (FromUnit == "Kilograms" && ToUnit == "Pounds")
-                OutputAmount = UnitConverters.KilogramsToPounds(input);
-            else if (FromUnit == "Pounds" && ToUnit == "Kilograms")
-                OutputAmount = UnitConverters.PoundsToKilograms(input);
-            else if (FromUnit == "Kilograms" && ToUnit == "Ounces")
-                OutputAmount = input * 35.274;
-            else if (FromUnit == "Ounces" && ToUnit == "Kilograms")
-                OutputAmount = input * 0.0283495;
-            else if (FromUnit == "Pounds" && ToUnit == "Ounces")
-                OutputAmount = input * 16;
-            else if (FromUnit == "Ounces" && ToUnit == "Pounds")
-                OutputAmount = input * 0.0625;
-            else if (FromUnit == "Kilograms" && ToUnit == "Grams")
-                OutputAmount = input * 1000;
-            else if (FromUnit == "Grams" && ToUnit == "Kilograms")
-                OutputAmount = input * 0.001;
-            else if (FromUnit == "Pounds" && ToUnit == "Grams")
-                OutputAmount = input * 453.592;
-            else if (FromUnit == "Grams" && ToUnit == "Pounds")
-                OutputAmount = input * 0.00220462;
-            else if (FromUnit == "Ounces" && ToUnit == "Grams")
-                OutputAmount = input * 28.3495;
-            else if (FromUnit == "Grams" && ToUnit == "Ounces")
-                OutputAmount = input * 0.035274;
-            else if (FromUnit == "Kilograms" && ToUnit == "1995 Honda Civic Hatch")
-                OutputAmount = input / 1143;
-            else if (FromUnit == "1995 Honda Civic Hatchback" && ToUnit == "Kilograms")
-                OutputAmount = input * 1143;
-            else if (FromUnit == ToUnit)
-                OutputAmount = input;
-            //Add below alerts for error cases. 
-            else if (FromUnit == "" || ToUnit == "")
+            UselessThing fromThing = await dbHelper.GetUselessThingByNameAsync(FromUnit.Name);
+            UselessThing toThing = await dbHelper.GetUselessThingByNameAsync(ToUnit.Name);
+
+            float fromWeight;
+            float toWeight;
+
+            if (FromUnit == null || ToUnit == null)
+            {
                 await Application.Current.MainPage.DisplayAlert("Error", "Please select units to convert.", "OK");
+            }
             else
-                await Application.Current.MainPage.DisplayAlert("Error", "Cannot convert. Please contact administrator.", "OK");
+            {
+                fromWeight = fromThing.Weight;
+                toWeight = toThing.Weight;
+                
+                OutputAmount = (input * (fromWeight / toWeight));
+            }
         }
 
-        public ICommand ConvertCommand { get; }
+        public async void ConvertLength(float input)
+        {
+            UselessThing fromThing = await dbHelper.GetUselessThingByNameAsync(FromUnit.Name);
+            UselessThing toThing = await dbHelper.GetUselessThingByNameAsync(ToUnit.Name);
+
+            float fromLength;
+            float toLength;
+
+            if (FromUnit == null || ToUnit == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please select units to convert.", "OK");
+            }
+            else
+            {
+                fromLength = fromThing.Length;
+                toLength = toThing.Length;
+
+                OutputAmount = (input * (fromLength / toLength));
+            }
+        }
+
+        public ICommand ConvertWeightCommand { get; }
+
+        public ICommand ConvertLengthCommand { get; }
 
         private string convertUnit;
 
@@ -95,33 +107,36 @@ namespace unitConverter.ViewModels
             set { SetProperty(ref convertamount, value, "ConvertAmount"); }
         }
 
-        public double inputamount;
-        public double outputamount;
+        public float inputamount;
+        public float outputamount;
 
-        public double InputAmount
+        public float InputAmount
         {
             get { return inputamount; }
             set { SetProperty(ref inputamount, value, "InputAmount"); }
         }
-        public double OutputAmount
+        public float OutputAmount
         {
             get { return outputamount; }
             set { SetProperty(ref outputamount, value, "OutputAmount"); }
         }
 
-        public string fromunit;
-        public string FromUnit
+        public UselessThing fromunit;
+        public UselessThing FromUnit
         {
             get { return fromunit; }
             set { SetProperty(ref fromunit, value, "FromUnit"); }
         }
 
-        public string tounit;
-        public string ToUnit
+        public UselessThing tounit;
+        public UselessThing ToUnit
         {
             get { return tounit; }
             set { SetProperty(ref tounit, value, "ToUnit"); }
         }
+
+        public string WeightPageTitle { get; private set; }
+        public string LengthPageTitle { get; private set; }
 
         public class ConvertableUnit
         {
