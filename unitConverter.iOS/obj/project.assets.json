@@ -84,6 +84,13 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "Xamarin.Build.Download/0.10.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
@@ -95,6 +102,35 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.AdMob/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6",
+          "Xamarin.Google.iOS.MobileAds": "7.57.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ]
+      },
+      "Xamarin.Firebase.iOS.Core/6.6.6": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/4.8.0.1451": {
@@ -218,11 +254,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Google.iOS.MobileAds/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Google.iOS.MobileAds.targets": {}
+        }
+      },
       "unitConverter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Firebase.iOS.AdMob": "7.57.0",
           "Xamarin.Forms": "4.8.0.1451",
           "sqlite-net-pcl": "1.7.335"
         },
@@ -317,6 +373,13 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "Xamarin.Build.Download/0.10.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
@@ -328,6 +391,35 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.AdMob/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6",
+          "Xamarin.Google.iOS.MobileAds": "7.57.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ]
+      },
+      "Xamarin.Firebase.iOS.Core/6.6.6": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/4.8.0.1451": {
@@ -451,11 +543,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Google.iOS.MobileAds/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Google.iOS.MobileAds.targets": {}
+        }
+      },
       "unitConverter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Firebase.iOS.AdMob": "7.57.0",
           "Xamarin.Forms": "4.8.0.1451",
           "sqlite-net-pcl": "1.7.335"
         },
@@ -550,6 +662,13 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "Xamarin.Build.Download/0.10.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
@@ -561,6 +680,35 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.AdMob/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6",
+          "Xamarin.Google.iOS.MobileAds": "7.57.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ]
+      },
+      "Xamarin.Firebase.iOS.Core/6.6.6": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/4.8.0.1451": {
@@ -684,11 +832,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Google.iOS.MobileAds/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Google.iOS.MobileAds.targets": {}
+        }
+      },
       "unitConverter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Firebase.iOS.AdMob": "7.57.0",
           "Xamarin.Forms": "4.8.0.1451",
           "sqlite-net-pcl": "1.7.335"
         },
@@ -783,6 +951,13 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "Xamarin.Build.Download/0.10.0": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Essentials/1.5.3.2": {
         "type": "package",
         "frameworkAssemblies": [
@@ -794,6 +969,35 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "Xamarin.Firebase.iOS.AdMob/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6",
+          "Xamarin.Google.iOS.MobileAds": "7.57.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ]
+      },
+      "Xamarin.Firebase.iOS.Core/6.6.6": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Firebase.Core.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Firebase.iOS.Core.targets": {}
         }
       },
       "Xamarin.Forms/4.8.0.1451": {
@@ -917,11 +1121,31 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Google.iOS.MobileAds/7.57.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.10.0",
+          "Xamarin.Firebase.iOS.Core": "6.6.6"
+        },
+        "frameworkAssemblies": [
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Google.MobileAds.dll": {}
+        },
+        "build": {
+          "buildTransitive/Xamarin.Google.iOS.MobileAds.targets": {}
+        }
+      },
       "unitConverter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Firebase.iOS.AdMob": "7.57.0",
           "Xamarin.Forms": "4.8.0.1451",
           "sqlite-net-pcl": "1.7.335"
         },
@@ -1062,6 +1286,28 @@
         "version.txt"
       ]
     },
+    "Xamarin.Build.Download/0.10.0": {
+      "sha512": "XiQNxx6Jox00O80sJRlZv6jXDZ/r3KC7SMwzQNQcD1gZ+vsZyJH3LcSpdJ5NiZhRrWZlTGNSbooHsOBF7lBOyQ==",
+      "type": "package",
+      "path": "xamarin.build.download/0.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICE.txt",
+        "build/Microsoft.Win32.Registry.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "buildTransitive/Microsoft.Win32.Registry.dll",
+        "buildTransitive/Newtonsoft.Json.dll",
+        "buildTransitive/Xamarin.Build.Download.dll",
+        "buildTransitive/Xamarin.Build.Download.props",
+        "buildTransitive/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.10.0.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.5.3.2": {
       "sha512": "BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
       "type": "package",
@@ -1108,6 +1354,36 @@
         "readme.txt",
         "xamarin.essentials.1.5.3.2.nupkg.sha512",
         "xamarin.essentials.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.AdMob/7.57.0": {
+      "sha512": "mkqgszCXmgv0UWd81AwYjMEDAfKkr8NVIgl3T9b6ABOBF8/WMUeSJ3HO1QZaMnbhv+YeVN+FWKeYNAE4ZGp1Eg==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.admob/7.57.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "firebaseiosadmob_128x128.png",
+        "xamarin.firebase.ios.admob.7.57.0.nupkg.sha512",
+        "xamarin.firebase.ios.admob.nuspec"
+      ]
+    },
+    "Xamarin.Firebase.iOS.Core/6.6.6": {
+      "sha512": "GM43jhKOjzs2AwTNxPA3OFW/UVAM7oBWfYn0m9c56oOAAlPdpO7LebWXkLNa/vcFv9gtfCBrVVl+QIk8miwTDw==",
+      "type": "package",
+      "path": "xamarin.firebase.ios.core/6.6.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Xamarin.Firebase.iOS.Core.targets",
+        "buildTransitive/Xamarin.Firebase.iOS.Core.targets",
+        "firebaseioscore_128x128.png",
+        "lib/xamarinios10/Firebase.Core.dll",
+        "xamarin.firebase.ios.core.6.6.6.nupkg.sha512",
+        "xamarin.firebase.ios.core.nuspec"
       ]
     },
     "Xamarin.Forms/4.8.0.1451": {
@@ -1426,6 +1702,23 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Google.iOS.MobileAds/7.57.0": {
+      "sha512": "e9hQr0/i8gy+wO4VssaQoIN8L5lgkN3UVzpN+NilgxhFZRbZncCaYyFW2NTvvb7r0QzTix4dZRhnSvBP3r8x5Q==",
+      "type": "package",
+      "path": "xamarin.google.ios.mobileads/7.57.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Xamarin.Google.iOS.MobileAds.targets",
+        "buildTransitive/Xamarin.Google.iOS.MobileAds.targets",
+        "googleiosmobileads_128x128.png",
+        "lib/xamarinios10/Google.MobileAds.dll",
+        "xamarin.google.ios.mobileads.7.57.0.nupkg.sha512",
+        "xamarin.google.ios.mobileads.nuspec"
+      ]
+    },
     "unitConverter/1.0.0": {
       "type": "project",
       "path": "../unitConverter/unitConverter.csproj",
@@ -1435,30 +1728,31 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Xamarin.Essentials >= 1.5.3.2",
+      "Xamarin.Firebase.iOS.AdMob >= 7.57.0",
       "Xamarin.Forms >= 4.8.0.1451",
       "sqlite-net-pcl >= 1.7.335",
       "unitConverter >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jnguyen\\.nuget\\packages\\": {},
+    "C:\\Users\\John\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repos\\unitConverter\\unitConverter.iOS\\unitConverter.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\John\\OneDrive\\Working\\source\\repos\\unitConverter\\unitConverter.iOS\\unitConverter.iOS.csproj",
       "projectName": "unitConverter.iOS",
-      "projectPath": "D:\\Repos\\unitConverter\\unitConverter.iOS\\unitConverter.iOS.csproj",
-      "packagesPath": "C:\\Users\\jnguyen\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\unitConverter\\unitConverter.iOS\\obj\\",
+      "projectPath": "C:\\Users\\John\\OneDrive\\Working\\source\\repos\\unitConverter\\unitConverter.iOS\\unitConverter.iOS.csproj",
+      "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\John\\OneDrive\\Working\\source\\repos\\unitConverter\\unitConverter.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\jnguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\John\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1472,8 +1766,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Repos\\unitConverter\\unitConverter\\unitConverter.csproj": {
-              "projectPath": "D:\\Repos\\unitConverter\\unitConverter\\unitConverter.csproj"
+            "C:\\Users\\John\\OneDrive\\Working\\source\\repos\\unitConverter\\unitConverter\\unitConverter.csproj": {
+              "projectPath": "C:\\Users\\John\\OneDrive\\Working\\source\\repos\\unitConverter\\unitConverter\\unitConverter.csproj"
             }
           }
         }
@@ -1485,6 +1779,10 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.2, )"
+          },
+          "Xamarin.Firebase.iOS.AdMob": {
+            "target": "Package",
+            "version": "[7.57.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
