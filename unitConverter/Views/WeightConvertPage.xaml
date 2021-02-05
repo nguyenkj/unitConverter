@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="unitConverter.Views.WeightConvertPage"
-             xmlns:vm="clr-namespace:unitConverter.ViewModels"
+             xmlns:vm="clr-namespace:unitConverter.ViewModels" xmlns:local="clr-namespace:unitConverter"
              Title="{Binding WeightPageTitle}">
 
     <ContentPage.BindingContext>
@@ -18,16 +18,17 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ContentPage.Content>
+    <!--<ContentPage.Content>-->
+    <StackLayout Orientation="Vertical" BackgroundColor="{StaticResource AppBackground}">
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10" BackgroundColor="{StaticResource AppBackground}">
                 <Entry Text="{Binding InputAmount}" Placeholder="Unit to Convert"
-                   TextChanged="InputAmount_TextChanged"
-                   Keyboard="Numeric"
-                   WidthRequest="500"  
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   TextColor="{StaticResource BodyText}"/>
+                    TextChanged="InputAmount_TextChanged"
+                    Keyboard="Numeric"
+                    WidthRequest="500"  
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                TextColor="{StaticResource BodyText}"/>
                 <Picker x:Name="FromUnitP"
                     Title="Select a Unit to Convert"
                     TitleColor="{StaticResource PreviewText}"
@@ -40,32 +41,40 @@
                     TextColor="{StaticResource BodyText}">
                 </Picker>
                 <Entry Text="{Binding OutputAmount, StringFormat='{0:F2}'}" 
-                   Keyboard="Numeric"
-                   WidthRequest="500"   
-                   HorizontalOptions="Center" 
-                   HorizontalTextAlignment="Center" 
-                   TextColor="{StaticResource BodyText}"/>
+                    Keyboard="Numeric"
+                    WidthRequest="500"   
+                    HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center" 
+                    TextColor="{StaticResource BodyText}"/>
                 <Picker x:Name="ToUnitP"
-                        Title="What should we convert to?"
-                        TitleColor="{StaticResource PreviewText}"
-                        ItemDisplayBinding="{Binding Name}"
-                        SelectedItem="{Binding ToUnit}"
-                        SelectedIndexChanged="UnitPicker_SelectedIndexChanged"
-                        HorizontalOptions="Center"
-                        HorizontalTextAlignment="Center"
-                        WidthRequest="500"
-                        TextColor="{StaticResource BodyText}">
+                    Title="What should we convert to?"
+                    TitleColor="{StaticResource PreviewText}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding ToUnit}"
+                    SelectedIndexChanged="UnitPicker_SelectedIndexChanged"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    WidthRequest="500"
+                    TextColor="{StaticResource BodyText}">
                 </Picker>
-                <StackLayout BackgroundColor="{StaticResource AppBackground}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                        <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                            <Image Source="donald_v_pineapples.png" VerticalOptions="Center" HeightRequest="300" />
-                        </ContentView>
-                    </StackLayout>
-                </StackLayout>
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource AppBackground}" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill">
+            <!-- middle controls -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView VerticalOptions="FillAndExpand">
+                    <Image Source="donald_v_pineapples.png" VerticalOptions="Center" HeightRequest="300" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" BackgroundColor="{StaticResource AppBackground}" VerticalOptions="End">
+            <!-- bottom controls -->
+            <ContentView VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                <local:AdMobView AdUnitId="ca-app-pub-3940256099942544/6300978111" WidthRequest="500" HeightRequest="50" HorizontalOptions="CenterAndExpand"/>
+            </ContentView>
+        </StackLayout>
+    </StackLayout>
+    <!--</ContentPage.Content>-->
     <!--<ListView x:Name="listView"
               Margin="20"
               ItemSelected="listView_ItemSelected">

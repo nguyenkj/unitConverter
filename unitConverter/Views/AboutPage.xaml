@@ -41,8 +41,8 @@
         </ScrollView>
         <ScrollView Grid.Row="1">
             <StackLayout BackgroundColor="{StaticResource AppBackground}" VerticalOptions="End" HorizontalOptions="Fill">
-                <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
-                    <local:AdMobView AdUnitId="ca-app-pub-4780487310118835/3359077730" WidthRequest="500" HeightRequest="50"/>
+                <ContentView VerticalOptions="Fill" HorizontalOptions="CenterAndExpand">
+                    <local:AdMobView AdUnitId="ca-app-pub-3940256099942544/6300978111" WidthRequest="500" HeightRequest="50"/>
                 </ContentView>
             </StackLayout>
         </ScrollView>

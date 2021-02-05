@@ -90,7 +90,7 @@ namespace unitConverter.ViewModels
 
         public bool CheckAllFieldsCompleted()
         {
-            if (FromUnit == null || ToUnit == null || InputAmount == null)
+            if (FromUnit == null || ToUnit == null || InputAmount == 0)
                 return false;
 
             return true;
@@ -115,7 +115,7 @@ namespace unitConverter.ViewModels
             set { SetProperty(ref convertamount, value, "ConvertAmount"); }
         }
 
-        public float inputamount;
+        public float inputamount = 0;
         public float outputamount;
 
         public float InputAmount
