@@ -56,6 +56,13 @@
                         WidthRequest="500"
                         TextColor="{StaticResource BodyText}">
                 </Picker>
+                <StackLayout BackgroundColor="{StaticResource AppBackground}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                            <Image Source="donald_v_pineapples.png" VerticalOptions="Center" HeightRequest="300" />
+                        </ContentView>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
@@ -69,5 +76,4 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>-->
-    
 </ContentPage>

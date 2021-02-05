@@ -37,7 +37,7 @@ namespace unitConverter.Droid
         {
             var adView = new AdView(Context)
             {
-                AdSize = AdSize.SmartBanner,
+                AdSize = AdSize.FullBanner,
                 AdUnitId = Element.AdUnitId
             };
 
