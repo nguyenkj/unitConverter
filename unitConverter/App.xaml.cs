@@ -27,6 +27,9 @@ namespace unitConverter
             }
         }
 
+        public static string adUnitId { get; set; } = "ca-app-pub-4780487310118835/3359077730";
+
+
         public App()
         {
             InitializeComponent();

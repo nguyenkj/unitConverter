@@ -65,7 +65,7 @@
         </StackLayout>
         <StackLayout Orientation="Vertical" BackgroundColor="{StaticResource AppBackground}" VerticalOptions="End">
             <ContentView VerticalOptions="End" HorizontalOptions="CenterAndExpand">
-                <local:AdMobView AdUnitId="ca-app-pub-3940256099942544/6300978111" WidthRequest="500" HeightRequest="50" HorizontalOptions="CenterAndExpand"/>
+                <local:AdMobView AdUnitId="ca-app-pub-4780487310118835/3359077730" WidthRequest="500" HeightRequest="50" HorizontalOptions="CenterAndExpand"/>
             </ContentView>
         </StackLayout>
     </StackLayout>
