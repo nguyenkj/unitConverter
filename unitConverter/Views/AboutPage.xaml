@@ -32,15 +32,19 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout BackgroundColor="{StaticResource AppBackground}" Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-               
                 <Label Text="Welcome to Decknology's Useless Unit Converter!" FontSize="Title" HorizontalTextAlignment="Center" TextColor="{StaticResource BodyText}"/>
                 <Label Text="Have you ever wondered how tall Elon Musk is in hot dogs? Maybe you want to know how many bananas a 1995 Honda Civic weighs." FontSize="Body" HorizontalTextAlignment="Start" TextColor="{StaticResource BodyText}"/>
                 <Label Text="No, someone as adventurous as you probably wants to know how many Donald Trumps it takes to outweigh the moon. With this app, you can figure out the answers to your wildest questions, and more!" FontSize="Body" HorizontalTextAlignment="Start" TextColor="{StaticResource BodyText}"/>
                 <Label Text="Click on the menu button to get started." FontSize="Body" HorizontalTextAlignment="Center" TextColor="{StaticResource BodyText}"/>
-                <local:AdMobView AdUnitId="ca-app-pub-3940256099942544/6300978111" WidthRequest="320" HeightRequest="50" BackgroundColor="#000000"/>
+                <!--<local:AdMobView AdUnitId="ca-app-pub-3940256099942544/6300978111" WidthRequest="320" HeightRequest="100" BackgroundColor="#000000" HorizontalOptions="Center"/>-->
             </StackLayout>
-            
+        </ScrollView>
+        <ScrollView Grid.Row="1">
+            <StackLayout BackgroundColor="{StaticResource AppBackground}" VerticalOptions="End" HorizontalOptions="Fill">
+                <ContentView VerticalOptions="Fill" HorizontalOptions="CenterAndExpand">
+                    <local:AdMobView AdUnitId="ca-app-pub-3940256099942544/6300978111" WidthRequest="500" HeightRequest="50"/>
+                </ContentView>
+            </StackLayout>
         </ScrollView>
     </Grid>
-
 </ContentPage>
