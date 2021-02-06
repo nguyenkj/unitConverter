@@ -15,6 +15,7 @@ namespace unitConverter.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeightConvertPage : ContentPage
     {
+ 
         public WeightConvertPage()
         {
             InitializeComponent();
@@ -48,6 +49,16 @@ namespace unitConverter.Views
 
             if (ThisViewModel.CheckAllFieldsCompleted() == true)
                 ThisViewModel.ConvertWeightCommand.Execute(null);
+
+
+            new Animation {
+  { 0, 0.25, new Animation (v => theDonald.TranslationY = v, 0, -40) },
+  { 0.25, .5, new Animation (v => theDonald.TranslationY = v, -40, 0, easing: Easing.BounceOut) }
+}
+.Commit(this, "AppleIconBounceChildAnimations", length: 1000, repeat: () => true);
+
+
+
         }
     }
 }

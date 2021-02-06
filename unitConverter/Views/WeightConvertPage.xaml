@@ -63,7 +63,7 @@
             <!-- middle controls -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView VerticalOptions="FillAndExpand">
-                    <Image Source="donald_v_pineapples.png" VerticalOptions="Center" HeightRequest="300" />
+                    <Image Source="donald_v_pineapples.png" VerticalOptions="Center" HeightRequest="300" x:Name="theDonald"/>
                 </ContentView>
             </StackLayout>
         </StackLayout>
